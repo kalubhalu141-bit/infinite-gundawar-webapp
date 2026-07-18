@@ -1,0 +1,289 @@
+{
+  "base": "https://infinite-gundawar-webapp.vercel.app",
+  "checked_at": "2026-06-14T02:24:34.243081+00:00",
+  "total": 21,
+  "ok_count": 12,
+  "bad_count": 9,
+  "slow": [
+    {
+      "url": "https://infinite-gundawar-webapp.vercel.app/api/lead-generator",
+      "method": "POST",
+      "status": 0,
+      "latency_ms": 25086,
+      "ok": false,
+      "error": "TimeoutError: The read operation timed out"
+    }
+  ],
+  "bad": [
+    {
+      "url": "https://infinite-gundawar-webapp.vercel.app/about",
+      "method": "GET",
+      "status": 404,
+      "latency_ms": 338,
+      "ok": false,
+      "marker": "CLIENT-ERROR",
+      "snippet": "<!DOCTYPE html><html lang=\"en\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/00t3wp1uyqf_k.css\" data-precedence=\"next\"/><link rel=\"preload\" as=\"script\" fetchPriority=\"low\" href=\"/_next/static/chunks/01dkdyukbdpqq.js\"/><script src=\"/_next/static/chunks/10muk0s002m9w.js\" async=\"\"></script><script sr"
+    },
+    {
+      "url": "https://infinite-gundawar-webapp.vercel.app/services",
+      "method": "GET",
+      "status": 404,
+      "latency_ms": 106,
+      "ok": false,
+      "marker": "CLIENT-ERROR",
+      "snippet": "<!DOCTYPE html><html lang=\"en\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/00t3wp1uyqf_k.css\" data-precedence=\"next\"/><link rel=\"preload\" as=\"script\" fetchPriority=\"low\" href=\"/_next/static/chunks/01dkdyukbdpqq.js\"/><script src=\"/_next/static/chunks/10muk0s002m9w.js\" async=\"\"></script><script sr"
+    },
+    {
+      "url": "https://infinite-gundawar-webapp.vercel.app/portfolio",
+      "method": "GET",
+      "status": 404,
+      "latency_ms": 101,
+      "ok": false,
+      "marker": "CLIENT-ERROR",
+      "snippet": "<!DOCTYPE html><html lang=\"en\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/00t3wp1uyqf_k.css\" data-precedence=\"next\"/><link rel=\"preload\" as=\"script\" fetchPriority=\"low\" href=\"/_next/static/chunks/01dkdyukbdpqq.js\"/><script src=\"/_next/static/chunks/10muk0s002m9w.js\" async=\"\"></script><script sr"
+    },
+    {
+      "url": "https://infinite-gundawar-webapp.vercel.app/testimonials",
+      "method": "GET",
+      "status": 404,
+      "latency_ms": 110,
+      "ok": false,
+      "marker": "CLIENT-ERROR",
+      "snippet": "<!DOCTYPE html><html lang=\"en\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/00t3wp1uyqf_k.css\" data-precedence=\"next\"/><link rel=\"preload\" as=\"script\" fetchPriority=\"low\" href=\"/_next/static/chunks/01dkdyukbdpqq.js\"/><script src=\"/_next/static/chunks/10muk0s002m9w.js\" async=\"\"></script><script sr"
+    },
+    {
+      "url": "https://infinite-gundawar-webapp.vercel.app/contact",
+      "method": "GET",
+      "status": 404,
+      "latency_ms": 133,
+      "ok": false,
+      "marker": "CLIENT-ERROR",
+      "snippet": "<!DOCTYPE html><html lang=\"en\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/00t3wp1uyqf_k.css\" data-precedence=\"next\"/><link rel=\"preload\" as=\"script\" fetchPriority=\"low\" href=\"/_next/static/chunks/01dkdyukbdpqq.js\"/><script src=\"/_next/static/chunks/10muk0s002m9w.js\" async=\"\"></script><script sr"
+    },
+    {
+      "url": "https://infinite-gundawar-webapp.vercel.app/api/lead-generator",
+      "method": "POST",
+      "status": 0,
+      "latency_ms": 25086,
+      "ok": false,
+      "error": "TimeoutError: The read operation timed out"
+    },
+    {
+      "url": "https://infinite-gundawar-webapp.vercel.app/api/phone-scraper",
+      "method": "POST",
+      "status": 400,
+      "latency_ms": 541,
+      "ok": false,
+      "marker": "CLIENT-ERROR",
+      "snippet": "{\"error\":\"Query is required\"}"
+    },
+    {
+      "url": "https://infinite-gundawar-webapp.vercel.app/api/email-sender",
+      "method": "POST",
+      "status": 400,
+      "latency_ms": 543,
+      "ok": false,
+      "marker": "CLIENT-ERROR",
+      "snippet": "{\"error\":\"From email is required\"}"
+    },
+    {
+      "url": "https://infinite-gundawar-webapp.vercel.app/api/scrape?q=property+pune&limit=1",
+      "method": "GET",
+      "status": 405,
+      "latency_ms": 584,
+      "ok": false,
+      "marker": "CLIENT-ERROR",
+      "snippet": ""
+    }
+  ],
+  "all": [
+    {
+      "url": "https://infinite-gundawar-webapp.vercel.app/",
+      "method": "GET",
+      "status": 200,
+      "latency_ms": 239,
+      "ok": true,
+      "marker": "",
+      "snippet": "<!DOCTYPE html><html lang=\"en\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" as=\"image\" href=\"/logo.png\"/><link rel=\"preload\" as=\"image\" href=\"/logo-full.png\"/><link rel=\"preload\" as=\"image\" href=\"https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=600&amp;h=400&amp;fit=crop\"/><link rel=\"preload\" as=\"image\" href=\"https"
+    },
+    {
+      "url": "https://infinite-gundawar-webapp.vercel.app/about",
+      "method": "GET",
+      "status": 404,
+      "latency_ms": 338,
+      "ok": false,
+      "marker": "CLIENT-ERROR",
+      "snippet": "<!DOCTYPE html><html lang=\"en\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/00t3wp1uyqf_k.css\" data-precedence=\"next\"/><link rel=\"preload\" as=\"script\" fetchPriority=\"low\" href=\"/_next/static/chunks/01dkdyukbdpqq.js\"/><script src=\"/_next/static/chunks/10muk0s002m9w.js\" async=\"\"></script><script sr"
+    },
+    {
+      "url": "https://infinite-gundawar-webapp.vercel.app/services",
+      "method": "GET",
+      "status": 404,
+      "latency_ms": 106,
+      "ok": false,
+      "marker": "CLIENT-ERROR",
+      "snippet": "<!DOCTYPE html><html lang=\"en\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/00t3wp1uyqf_k.css\" data-precedence=\"next\"/><link rel=\"preload\" as=\"script\" fetchPriority=\"low\" href=\"/_next/static/chunks/01dkdyukbdpqq.js\"/><script src=\"/_next/static/chunks/10muk0s002m9w.js\" async=\"\"></script><script sr"
+    },
+    {
+      "url": "https://infinite-gundawar-webapp.vercel.app/portfolio",
+      "method": "GET",
+      "status": 404,
+      "latency_ms": 101,
+      "ok": false,
+      "marker": "CLIENT-ERROR",
+      "snippet": "<!DOCTYPE html><html lang=\"en\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/00t3wp1uyqf_k.css\" data-precedence=\"next\"/><link rel=\"preload\" as=\"script\" fetchPriority=\"low\" href=\"/_next/static/chunks/01dkdyukbdpqq.js\"/><script src=\"/_next/static/chunks/10muk0s002m9w.js\" async=\"\"></script><script sr"
+    },
+    {
+      "url": "https://infinite-gundawar-webapp.vercel.app/testimonials",
+      "method": "GET",
+      "status": 404,
+      "latency_ms": 110,
+      "ok": false,
+      "marker": "CLIENT-ERROR",
+      "snippet": "<!DOCTYPE html><html lang=\"en\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/00t3wp1uyqf_k.css\" data-precedence=\"next\"/><link rel=\"preload\" as=\"script\" fetchPriority=\"low\" href=\"/_next/static/chunks/01dkdyukbdpqq.js\"/><script src=\"/_next/static/chunks/10muk0s002m9w.js\" async=\"\"></script><script sr"
+    },
+    {
+      "url": "https://infinite-gundawar-webapp.vercel.app/contact",
+      "method": "GET",
+      "status": 404,
+      "latency_ms": 133,
+      "ok": false,
+      "marker": "CLIENT-ERROR",
+      "snippet": "<!DOCTYPE html><html lang=\"en\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/00t3wp1uyqf_k.css\" data-precedence=\"next\"/><link rel=\"preload\" as=\"script\" fetchPriority=\"low\" href=\"/_next/static/chunks/01dkdyukbdpqq.js\"/><script src=\"/_next/static/chunks/10muk0s002m9w.js\" async=\"\"></script><script sr"
+    },
+    {
+      "url": "https://infinite-gundawar-webapp.vercel.app/finance",
+      "method": "GET",
+      "status": 200,
+      "latency_ms": 583,
+      "ok": true,
+      "marker": "",
+      "snippet": "<!DOCTYPE html><html lang=\"en\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" as=\"image\" href=\"/logo.png\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/00t3wp1uyqf_k.css\" data-precedence=\"next\"/><link rel=\"preload\" as=\"script\" fetchPriority=\"low\" href=\"/_next/static/chunks/01dkdyukbdpqq.js\"/><script src=\"/_next/static/chun"
+    },
+    {
+      "url": "https://infinite-gundawar-webapp.vercel.app/ayurveda",
+      "method": "GET",
+      "status": 200,
+      "latency_ms": 651,
+      "ok": true,
+      "marker": "",
+      "snippet": "<!DOCTYPE html><html lang=\"en\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" as=\"image\" href=\"/logo.png\"/><link rel=\"preload\" as=\"image\" href=\"https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&amp;h=1080&amp;fit=crop\"/><link rel=\"preload\" as=\"image\" href=\"https://images.unsplash.com/photo-1607619056574-7b8d3e"
+    },
+    {
+      "url": "https://infinite-gundawar-webapp.vercel.app/happiness",
+      "method": "GET",
+      "status": 200,
+      "latency_ms": 648,
+      "ok": true,
+      "marker": "",
+      "snippet": "<!DOCTYPE html><html lang=\"en\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" as=\"image\" href=\"/logo.png\"/><link rel=\"preload\" as=\"image\" href=\"https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&amp;h=1080&amp;fit=crop\"/><link rel=\"preload\" as=\"image\" href=\"https://images.unsplash.com/photo-1506126613408-eca07c"
+    },
+    {
+      "url": "https://infinite-gundawar-webapp.vercel.app/ai-tools",
+      "method": "GET",
+      "status": 200,
+      "latency_ms": 599,
+      "ok": true,
+      "marker": "",
+      "snippet": "<!DOCTYPE html><html lang=\"en\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" as=\"image\" href=\"/logo.png\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/00t3wp1uyqf_k.css\" data-precedence=\"next\"/><link rel=\"preload\" as=\"script\" fetchPriority=\"low\" href=\"/_next/static/chunks/01dkdyukbdpqq.js\"/><script src=\"/_next/static/chun"
+    },
+    {
+      "url": "https://infinite-gundawar-webapp.vercel.app/career",
+      "method": "GET",
+      "status": 200,
+      "latency_ms": 537,
+      "ok": true,
+      "marker": "",
+      "snippet": "<!DOCTYPE html><html lang=\"en\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" as=\"image\" href=\"/logo.png\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/00t3wp1uyqf_k.css\" data-precedence=\"next\"/><link rel=\"preload\" as=\"script\" fetchPriority=\"low\" href=\"/_next/static/chunks/01dkdyukbdpqq.js\"/><script src=\"/_next/static/chun"
+    },
+    {
+      "url": "https://infinite-gundawar-webapp.vercel.app/property-finder",
+      "method": "GET",
+      "status": 200,
+      "latency_ms": 522,
+      "ok": true,
+      "marker": "",
+      "snippet": "<!DOCTYPE html><html lang=\"en\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" as=\"image\" href=\"/logo.png\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/00t3wp1uyqf_k.css\" data-precedence=\"next\"/><link rel=\"preload\" as=\"script\" fetchPriority=\"low\" href=\"/_next/static/chunks/01dkdyukbdpqq.js\"/><script src=\"/_next/static/chun"
+    },
+    {
+      "url": "https://infinite-gundawar-webapp.vercel.app/data-scraper",
+      "method": "GET",
+      "status": 200,
+      "latency_ms": 560,
+      "ok": true,
+      "marker": "",
+      "snippet": "<!DOCTYPE html><html lang=\"en\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" as=\"image\" href=\"/logo.png\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/00t3wp1uyqf_k.css\" data-precedence=\"next\"/><link rel=\"preload\" as=\"script\" fetchPriority=\"low\" href=\"/_next/static/chunks/01dkdyukbdpqq.js\"/><script src=\"/_next/static/chun"
+    },
+    {
+      "url": "https://infinite-gundawar-webapp.vercel.app/phone-scraper",
+      "method": "GET",
+      "status": 200,
+      "latency_ms": 562,
+      "ok": true,
+      "marker": "",
+      "snippet": "<!DOCTYPE html><html lang=\"en\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" as=\"image\" href=\"/logo.png\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/00t3wp1uyqf_k.css\" data-precedence=\"next\"/><link rel=\"preload\" as=\"script\" fetchPriority=\"low\" href=\"/_next/static/chunks/01dkdyukbdpqq.js\"/><script src=\"/_next/static/chun"
+    },
+    {
+      "url": "https://infinite-gundawar-webapp.vercel.app/email-sender",
+      "method": "GET",
+      "status": 200,
+      "latency_ms": 594,
+      "ok": true,
+      "marker": "",
+      "snippet": "<!DOCTYPE html><html lang=\"en\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" as=\"image\" href=\"/logo.png\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/00t3wp1uyqf_k.css\" data-precedence=\"next\"/><link rel=\"preload\" as=\"script\" fetchPriority=\"low\" href=\"/_next/static/chunks/01dkdyukbdpqq.js\"/><script src=\"/_next/static/chun"
+    },
+    {
+      "url": "https://infinite-gundawar-webapp.vercel.app/api/ayurveda-doctors",
+      "method": "POST",
+      "status": 200,
+      "latency_ms": 1898,
+      "ok": true,
+      "marker": "",
+      "snippet": "{\"type\":\"status\",\"message\":\"Ayurveda Doctor Scraper: 33 queries generated. Searching for ayurveda doctors in India...\",\"totalQueries\":33,\"targetCount\":10000}\n{\"type\":\"progress\",\"query\":\"ayurveda doctor in India contact\",\"queriesProcessed\":1,\"totalQueries\":33,\"doctorsFound\":3,\"targetCount\":10000,\"percentComplete\":3,\"latestDoctors\":[{\"name\":\"Apollo AyurVAID: Best Ayurveda Hospital in India\",\"phones\""
+    },
+    {
+      "url": "https://infinite-gundawar-webapp.vercel.app/api/lead-generator",
+      "method": "POST",
+      "status": 0,
+      "latency_ms": 25086,
+      "ok": false,
+      "error": "TimeoutError: The read operation timed out"
+    },
+    {
+      "url": "https://infinite-gundawar-webapp.vercel.app/api/marketplace-scrape",
+      "method": "POST",
+      "status": 200,
+      "latency_ms": 930,
+      "ok": true,
+      "marker": "",
+      "snippet": "{\"type\":\"status\",\"message\":\"Starting property scrape: 1 queries for India, Pune...\",\"totalQueries\":1,\"targetCount\":3}\n{\"type\":\"progress\",\"query\":\"real estate property for sale in Pune India\",\"queriesProcessed\":1,\"totalQueries\":1,\"found\":10,\"targetCount\":3,\"percentComplete\":100,\"latestResults\":[{\"id\":\"mp-1781403892906-gcs97a\",\"title\":\"Property for Sale in Pune, Maharashtra - Realtor.com\",\"descripti"
+    },
+    {
+      "url": "https://infinite-gundawar-webapp.vercel.app/api/phone-scraper",
+      "method": "POST",
+      "status": 400,
+      "latency_ms": 541,
+      "ok": false,
+      "marker": "CLIENT-ERROR",
+      "snippet": "{\"error\":\"Query is required\"}"
+    },
+    {
+      "url": "https://infinite-gundawar-webapp.vercel.app/api/email-sender",
+      "method": "POST",
+      "status": 400,
+      "latency_ms": 543,
+      "ok": false,
+      "marker": "CLIENT-ERROR",
+      "snippet": "{\"error\":\"From email is required\"}"
+    },
+    {
+      "url": "https://infinite-gundawar-webapp.vercel.app/api/scrape?q=property+pune&limit=1",
+      "method": "GET",
+      "status": 405,
+      "latency_ms": 584,
+      "ok": false,
+      "marker": "CLIENT-ERROR",
+      "snippet": ""
+    }
+  ]
+}

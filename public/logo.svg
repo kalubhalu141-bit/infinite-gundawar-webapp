@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="240" height="240">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e3a5f"/>
+      <stop offset="100%" style="stop-color:#2c5282"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#d4a843"/>
+      <stop offset="100%" style="stop-color:#ecc94b"/>
+    </linearGradient>
+    <clipPath id="circle">
+      <circle cx="120" cy="120" r="110"/>
+    </clipPath>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Background circle -->
+  <circle cx="120" cy="120" r="115" fill="url(#bg)" filter="url(#shadow)"/>
+  <circle cx="120" cy="120" r="110" fill="none" stroke="url(#gold)" stroke-width="3"/>
+  
+  <!-- Inner decorative ring -->
+  <circle cx="120" cy="120" r="95" fill="none" stroke="url(#gold)" stroke-width="1" opacity="0.5"/>
+  
+  <!-- Merged image placeholder - using the initials as logo -->
+  <!-- Left half representation (from 251) -->
+  <rect x="25" y="50" width="70" height="140" rx="10" fill="#1e3a5f" opacity="0.9"/>
+  <text x="60" y="110" text-anchor="middle" fill="#d4a843" font-size="36" font-weight="bold" font-family="Arial">IG</text>
+  <text x="60" y="140" text-anchor="middle" fill="#ecc94b" font-size="10" font-family="Arial">INFINITE</text>
+  
+  <!-- Right half representation (from 252) -->
+  <rect x="100" y="50" width="110" height="140" rx="10" fill="#2c5282" opacity="0.9"/>
+  
+  <!-- Om symbol / Ayurvedic element -->
+  <text x="155" y="100" text-anchor="middle" fill="#d4a843" font-size="42" font-family="Arial">ॐ</text>
+  
+  <!-- Business text -->
+  <text x="155" y="135" text-anchor="middle" fill="white" font-size="11" font-weight="bold" font-family="Arial">GUNDAWAR</text>
+  <text x="155" y="155" text-anchor="middle" fill="#ecc94b" font-size="8" font-family="Arial">BUSINESS PVT. LTD.</text>
+  
+  <!-- Decorative elements -->
+  <circle cx="120" cy="35" r="3" fill="#d4a843"/>
+  <circle cx="120" cy="205" r="3" fill="#d4a843"/>
+  <circle cx="35" cy="120" r="3" fill="#d4a843"/>
+  <circle cx="205" cy="120" r="3" fill="#d4a843"/>
+  
+  <!-- Gold accent lines -->
+  <line x1="50" y1="175" x2="190" y2="175" stroke="url(#gold)" stroke-width="1" opacity="0.6"/>
+</svg>

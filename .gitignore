@@ -39,3 +39,6 @@ Thumbs.db
 .netlify
 
 .vercel
+
+# Generated lead DB (regenerate: node scripts/build-leads-db.mjs)
+data/leads.db

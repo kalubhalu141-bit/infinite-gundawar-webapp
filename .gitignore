@@ -42,3 +42,6 @@ Thumbs.db
 
 # Generated lead DB (regenerate: node scripts/build-leads-db.mjs)
 data/leads.db
+
+# Generated doctor index (real scraped data, accumulates over searches)
+data/doctors-index.json

@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
+import { appendDoctors, type Doctor } from '@/lib/doctor-index'
 
 const SERPER_API_URL = 'https://google.serper.dev/search'
 
@@ -249,6 +250,14 @@ export async function POST(request: NextRequest) {
           .filter(d => d.phones.length > 0 || d.address)
           .sort((a, b) => b.phones.length - a.phones.length)
 
+        // Persist real doctors into the accumulating index (dedupe + merge).
+        let persist = { added: 0, total: 0 }
+        try {
+          persist = appendDoctors(finalDoctors as Doctor[])
+        } catch (e) {
+          console.error('[doctor-index] persist failed', e)
+        }
+
         const stats = {
           total: finalDoctors.length,
           withPhone: finalDoctors.filter(d => d.phones.length > 0).length,
@@ -263,8 +272,9 @@ export async function POST(request: NextRequest) {
 
         controller.enqueue(encoder.encode(JSON.stringify({
           type: 'complete',
-          message: `Ayurveda doctor search complete! Found ${finalDoctors.length.toLocaleString()} doctors with phone numbers and addresses.`,
+          message: `Ayurveda doctor search complete! Found ${finalDoctors.length.toLocaleString()} doctors this run. Indexed total: ${persist.total.toLocaleString()} real doctors (${persist.added} new).`,
           stats,
+          indexedTotal: persist.total,
           doctors: finalDoctors,
         }) + '\n'))
 

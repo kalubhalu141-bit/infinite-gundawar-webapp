@@ -6,6 +6,7 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { DISEASES, type Disease } from '@/lib/disease-database'
 import { HERBS } from '@/lib/herbs-real'
+import { translateOffline } from '@/lib/clientML'
 
 /* ───────────────────────────────────────────────────────────────────────────
    AI DIAGNOSE — free, on-device symptom checker.
@@ -45,16 +46,21 @@ const SEVERITY_STYLE: Record<string, string> = {
 export default function DiagnosePage() {
   const [input, setInput] = useState('')
   const [ran, setRan] = useState(false)
+  const [lang, setLang] = useState<'en' | 'hi'>('en')
+
+  // On-device HI->EN translate (offline dictionary) so Hindi users can describe
+  // symptoms and still match the English symptom vocabulary. Free, private.
+  const effectiveInput = lang === 'hi' && input.trim() ? translateOffline(input, 'en') : input
 
   const results = useMemo(() => {
-    const tokens = tokenize(input)
+    const tokens = tokenize(effectiveInput)
     if (tokens.length === 0) return []
     return DISEASES
-      .map(d => ({ d, score: scoreDisease(d, tokens, input) }))
+      .map(d => ({ d, score: scoreDisease(d, tokens, effectiveInput) }))
       .filter(x => x.score > 0)
       .sort((a, b) => b.score - a.score)
       .slice(0, 4)
-  }, [input])
+  }, [effectiveInput])
 
   const herbById = useMemo(() => Object.fromEntries(HERBS.map(h => [h.id, h])), [])
 
@@ -104,13 +110,21 @@ export default function DiagnosePage() {
               </button>
             ))}
           </div>
-          <button
-            onClick={() => setRan(true)}
-            disabled={!input.trim()}
-            className="btn-ai mt-4 w-full sm:w-auto disabled:opacity-40"
-          >
-            🔍 Analyze Symptoms (on-device)
-          </button>
+          <div className="flex flex-wrap items-center gap-3 mt-4">
+            <button
+              onClick={() => setLang(l => l === 'en' ? 'hi' : 'en')}
+              className="px-4 py-2.5 rounded-2xl bg-[#1e3a5f]/10 text-[#1e3a5f] text-sm font-semibold hover:bg-[#1e3a5f]/20 transition-colors"
+            >
+              {lang === 'en' ? 'हिंदी में लिखें' : 'Write in English'}
+            </button>
+            <button
+              onClick={() => setRan(true)}
+              disabled={!input.trim()}
+              className="btn-ai flex-1 sm:flex-none disabled:opacity-40"
+            >
+              🔍 Analyze Symptoms (on-device)
+            </button>
+          </div>
         </div>
 
         {/* Results */}

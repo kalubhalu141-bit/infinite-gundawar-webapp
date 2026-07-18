@@ -86,6 +86,7 @@ export default function Navbar() {
     { href: '/ai-tools', label: '🤖 AI Tools' },
     { href: '/infinite-ai', label: '♾️ Infinite AI' },
     { href: '/ai-studio', label: '🚀 AI Studio' },
+    { href: '/diagnose', label: '🩺 Diagnose' },
     { href: '/newsroom', label: '📰 Newsroom' },
     { href: '/trending-bots', label: '🔥 Trending Bots' },
     { href: '/career', label: '💼 Career' },

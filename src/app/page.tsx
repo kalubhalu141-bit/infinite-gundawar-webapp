@@ -3,8 +3,7 @@
 import { useState } from 'react'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
-import AIChatbot from '@/components/AIChatbot'
-import SmartAIAssistant from '@/components/SmartAIAssistant'
+import AIConcierge from '@/components/AIConcierge'
 import { FloatingBots } from '@/components/FloatingBots'
 import AnimatedSection from '@/components/AnimatedSection'
 import DailyInsight from '@/components/DailyInsight'
@@ -40,63 +39,48 @@ function Floating3D({ className = '', children, delay = 0 }: { className?: strin
 /* ─── Hero ─── */
 function Hero() {
   return (
-    <section id="home" className="relative min-h-screen flex items-center gradient-hero overflow-hidden">
-      {/* Cinematic Video Background */}
-      <div className="absolute inset-0 z-0">
-        <video
-          autoPlay muted loop playsInline
-          className="w-full h-full object-cover opacity-40"
-          poster="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920&h=1080&fit=crop"
-        >
-          <source src="https://cdn.pixabay.com/video/2024/02/22/201547-915908337_large.mp4" type="video/mp4" />
-        </video>
-        <div className="absolute inset-0 bg-gradient-to-r from-[#1e3a5f]/95 via-[#1e3a5f]/80 to-[#2c5282]/70" />
-      </div>
+    <section id="home" className="relative min-h-screen flex items-center bg-aurora-x overflow-hidden">
+      {/* Neural grid + glow (no external video — fully self-contained) */}
+      <div className="absolute inset-0 neural-grid opacity-70" />
+      <div className="absolute -top-24 -right-24 w-[28rem] h-[28rem] rounded-full bg-[#d4a843]/20 blur-3xl" />
+      <div className="absolute -bottom-32 -left-24 w-[26rem] h-[26rem] rounded-full bg-[#2c5282]/40 blur-3xl" />
 
-      {/* 3D Floating Elements */}
-      <Floating3D className="top-20 right-[10%] hidden lg:block" delay={0}>
-        <div className="w-32 h-32 rounded-2xl bg-gradient-to-br from-[#d4a843]/30 to-[#d4a843]/10 border border-[#d4a843]/20 backdrop-blur-sm"
-          style={{ transform: 'perspective(600px) rotateY(-15deg) rotateX(10deg)', boxShadow: '0 25px 50px -12px rgba(212,168,67,0.25)' }} />
+      {/* Floating glass cards */}
+      <Floating3D className="top-24 right-[8%] hidden lg:block" delay={0}>
+        <div className="w-32 h-32 rounded-2xl glass flex items-center justify-center text-4xl"
+          style={{ boxShadow: '0 25px 50px -12px rgba(212,168,67,0.25)' }}>🤖</div>
       </Floating3D>
-      <Floating3D className="bottom-32 right-[20%] hidden lg:block" delay={1.5}>
-        <div className="w-24 h-24 rounded-full bg-gradient-to-br from-white/20 to-white/5 border border-white/10 backdrop-blur-sm"
-          style={{ transform: 'perspective(600px) rotateY(20deg) rotateX(-5deg)', boxShadow: '0 20px 40px -12px rgba(255,255,255,0.15)' }} />
-      </Floating3D>
-      <Floating3D className="top-40 left-[5%] hidden xl:block" delay={3}>
-        <div className="w-20 h-20 rounded-xl bg-gradient-to-br from-[#2c5282]/40 to-[#1e3a5f]/20 border border-white/10"
-          style={{ transform: 'perspective(500px) rotateY(25deg) rotateX(8deg)', boxShadow: '0 15px 30px -10px rgba(30,58,95,0.4)' }} />
+      <Floating3D className="bottom-36 right-[18%] hidden lg:block" delay={1.5}>
+        <div className="w-24 h-24 rounded-full glass flex items-center justify-center text-3xl">♾️</div>
       </Floating3D>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
         <div className="max-w-3xl">
           <AnimatedSection>
-            <div className="mb-8">
+            <div className="mb-7">
               <img src="/logo-full.png" alt="Infinite Gundawar Business Private Limited" className="h-20 md:h-24 object-contain drop-shadow-lg" />
             </div>
-            <span className="inline-block px-4 py-2 bg-white/10 border border-white/20 rounded-full text-[#d4a843] text-sm font-medium mb-6 backdrop-blur-sm">
-              Welcome to Infinite Gundawar Business
+            <span className="inline-flex items-center gap-2 px-4 py-2 glass rounded-full text-[#d4a843] text-sm font-medium mb-6">
+              <span className="w-2 h-2 rounded-full bg-emerald-400 pulse-dot" />
+              Free On-Device AI · No API Keys · 100% Private
             </span>
           </AnimatedSection>
           <AnimatedSection delay={100}>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
               Building Tomorrow's
-              <span className="text-gradient"> Infrastructure</span>,
+              <span className="text-gradient text-glow"> Infrastructure</span>,
               <br />Trading Today
             </h1>
           </AnimatedSection>
           <AnimatedSection delay={200}>
-            <p className="text-lg text-white/70 mb-10 max-w-2xl leading-relaxed">
-              From infrastructure development and global trade to education and digital marketing — we deliver excellence across diverse business sectors, driving growth and innovation.
+            <p className="text-lg text-white/75 mb-10 max-w-2xl leading-relaxed">
+              A diversified enterprise — infrastructure, global trade, education, Ayurveda, finance & digital marketing — now supercharged with <strong className="text-[#d4a843]">free on-device AI</strong> that runs privately in your browser.
             </p>
           </AnimatedSection>
           <AnimatedSection delay={300}>
             <div className="flex flex-col sm:flex-row gap-4">
-              <a href="#services" className="px-8 py-4 gradient-accent text-[#1e3a5f] font-semibold rounded-xl text-center hover:shadow-lg hover:shadow-[#d4a843]/30 transition-all">
-                Our Services
-              </a>
-              <a href="#contact" className="px-8 py-4 border-2 border-white/30 text-white font-semibold rounded-xl text-center hover:bg-white/10 transition-all backdrop-blur-sm">
-                Get In Touch
-              </a>
+              <a href="#services" className="btn-ai">Our Services</a>
+              <a href="/ai-studio" className="btn-ghost-ai">Try the AI Studio →</a>
             </div>
           </AnimatedSection>
         </div>
@@ -105,14 +89,14 @@ function Hero() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 mt-20">
             {[
               { num: '4+', label: 'Business Verticals' },
-              { num: 'Wide', label: 'Geographic Reach' },
-              { num: 'End-to-End', label: 'Solutions' },
-              { num: 'Growing', label: 'Client Base' },
+              { num: '15+', label: 'Countries Trading' },
+              { num: '14+', label: 'Free AI Tools' },
+              { num: '10k+', label: 'Herbs Indexed' },
             ].map((stat, i) => (
               <Card3D key={stat.label}>
-                <div className="text-center p-6 bg-white/5 rounded-2xl border border-white/10 backdrop-blur-sm h-full"
+                <div className="text-center p-6 glass rounded-2xl h-full"
                   style={{ transform: `perspective(600px) rotateY(${i % 2 === 0 ? '-3deg' : '3deg'})`, transition: 'transform 0.5s ease' }}>
-                  <div className="text-3xl font-bold text-[#d4a843] mb-1">{stat.num}</div>
+                  <div className="text-3xl font-bold text-[#d4a843] mb-1 text-glow">{stat.num}</div>
                   <div className="text-white/60 text-sm">{stat.label}</div>
                 </div>
               </Card3D>
@@ -908,8 +892,7 @@ export default function Home() {
       <Testimonials />
       <Contact />
       <Footer />
-      <AIChatbot />
-      <SmartAIAssistant />
+      <AIConcierge />
       <FloatingBots />
     </>
   )

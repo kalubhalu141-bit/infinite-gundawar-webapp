@@ -269,16 +269,18 @@ function Hero() {
   }, [])
   return (
     <section className="relative pt-28 pb-12 overflow-hidden">
+      <div className="absolute inset-0 neural-grid opacity-40" />
       <div className="absolute inset-0 opacity-25">
-        <div className="absolute top-10 left-10 w-72 h-72 bg-fuchsia-600 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-10 w-96 h-96 bg-cyan-600 rounded-full blur-3xl" />
+        <div className="absolute top-10 left-10 w-72 h-72 bg-[#d4a843] rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-10 w-96 h-96 bg-[#2c5282] rounded-full blur-3xl" />
       </div>
       <div className="relative z-10 max-w-6xl mx-auto px-4 text-center">
-        <span className="inline-block px-4 py-2 bg-cyan-500/20 border border-cyan-400/30 rounded-full text-cyan-300 text-sm font-medium mb-5">
+        <span className="inline-flex items-center gap-2 px-4 py-2 glass rounded-full text-[#d4a843] text-sm font-medium mb-5">
+          <span className="w-2 h-2 rounded-full bg-emerald-400 pulse-dot" />
           🤖 Infinite AI Studio — 100% FREE · No API Keys · Runs in your Browser
         </span>
         <h1 className="text-4xl sm:text-6xl font-extrabold text-white mb-4 leading-tight">
-          Real AI Models. <span className="text-cyan-400">Zero Cost.</span> Zero Keys.
+          Real AI Models. <span className="text-gradient text-glow">Zero Cost.</span> Zero Keys.
         </h1>
         <p className="text-lg text-gray-300 max-w-3xl mx-auto mb-6">
           {TOOLS.length} production-grade machine-learning models across text, vision, audio & multimodal —
@@ -286,7 +288,7 @@ function Hero() {
         </p>
         <div className="flex flex-wrap justify-center gap-3 text-sm mb-4">
           {['⚡ On-device', '🔒 Private', '💸 Free forever', '🌍 English + हिंदी', `🧩 ${TOOLS.length} models`, gpu === 'webgpu' ? '🚀 WebGPU' : '🧮 WASM'].map(t => (
-            <span key={t} className="px-3 py-1.5 bg-white/5 border border-white/10 rounded-full text-gray-200">{t}</span>
+            <span key={t} className="px-3 py-1.5 glass rounded-full text-gray-200">{t}</span>
           ))}
         </div>
       </div>

@@ -115,6 +115,22 @@ export async function POST(req: NextRequest) {
 // GET — List leads (with search/filter/pagination)
 export async function GET(req: NextRequest) {
   try {
+    // Graceful degradation: if Supabase isn't configured (e.g. local dev / Vercel
+    // without env vars), return a clean 200 with empty data instead of a 500.
+    if (!process.env.NEXT_PUBLIC_SUPABASE_URL || !process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY) {
+      const url = new URL(req.url)
+      if (url.searchParams.get('action') === 'stats') {
+        return NextResponse.json(
+          { total: 0, verified: 0, today: 0, thisWeek: 0, sources: {}, topCities: [], notice: 'Lead database not configured. Set NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY.' },
+          { headers: corsHeaders() }
+        )
+      }
+      return NextResponse.json(
+        { leads: [], total: 0, page: 1, limit: 50, notice: 'Lead database not configured. Set NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY.' },
+        { headers: corsHeaders() }
+      )
+    }
+
     const url = new URL(req.url)
     const page = parseInt(url.searchParams.get('page') || '1')
     const limit = Math.min(parseInt(url.searchParams.get('limit') || '50'), 500)

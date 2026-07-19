@@ -11,6 +11,7 @@ import SemanticSearch from '@/components/SemanticSearch'
 import DocQA from '@/components/DocQA'
 import SemanticCompare from '@/components/SemanticCompare'
 import FreeAIChat from '@/components/FreeAIChat'
+import DocumentIntelligence from '@/components/DocumentIntelligence'
 
 export default function FreeAILabPage() {
   return (
@@ -38,6 +39,7 @@ export default function FreeAILabPage() {
             <DocQA />
             <SemanticCompare />
             <FreeAIChat />
+            <DocumentIntelligence />
           </div>
 
           <p style={{ color: 'var(--muted)', fontSize: 13, marginTop: 22 }}>

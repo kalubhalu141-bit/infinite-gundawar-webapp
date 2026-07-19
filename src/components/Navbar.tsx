@@ -85,6 +85,7 @@ export default function Navbar() {
   const toolLinks = [
     { href: '/three-experience', label: '🌐 3D Experience', highlight: true },
     { href: '/infinite-features', label: '♾️ Infinite Features', highlight: true },
+    { href: '/free-ai-lab', label: '🧪 Free AI Lab', highlight: true },
     { href: '/ai-tools', label: '🤖 AI Tools' },
     { href: '/infinite-ai', label: '♾️ Infinite AI' },
     { href: '/ai-studio', label: '🚀 AI Studio' },

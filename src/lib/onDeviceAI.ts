@@ -29,6 +29,12 @@ export const ODAI_MODELS = {
   qa: 'Xenova/distilbert-base-uncased-distilled-squad',
   tts: 'Xenova/speecht5_tts',
   asr: 'Xenova/whisper-small.en',
+  // ── NEW free models (Infinite Features expansion) ──
+  ner: 'Xenova/bert-base-NER',                                  // token classification
+  generate: 'Xenova/distilgpt2',                                // causal LM
+  fillMask: 'Xenova/bert-base-uncased',                         // fill-mask
+  imageCaption: 'Xenova/vit-gpt2-image-captioning',             // image-to-text
+  imageClassify: 'Xenova/vit-base-patch16-224',                // zero-shot image classification
 } as const
 
 export type ODTask = keyof typeof ODAI_MODELS
@@ -187,6 +193,80 @@ export async function speechToText(blob: Blob, onProgress?: (p: any) => void): P
 export async function textToSpeech(text: string, onProgress?: (p: any) => void): Promise<Blob> {
   const pipe = await getPipeline('tts', onProgress)
   return await pipe(text)
+}
+
+/* ── NEW free-AI wrappers (Infinite Features expansion) ── */
+
+/** Named Entity Recognition → extract PER/ORG/LOC/MISC spans from text. */
+export async function extractEntities(
+  text: string,
+  onProgress?: (p: any) => void,
+): Promise<{ entity: string; type: string; score: number }[]> {
+  const pipe = await getPipeline('ner', onProgress)
+  const out = await pipe(text)
+  const items = Array.isArray(out) ? out : []
+  const result: { entity: string; type: string; score: number }[] = []
+  let buf = ''
+  let bufType = ''
+  let bufScore = 0
+  for (const t of items) {
+    if (t.entity?.startsWith('B-')) {
+      if (buf) result.push({ entity: buf, type: bufType, score: bufScore })
+      buf = t.word
+      bufType = t.entity.slice(2)
+      bufScore = t.score
+    } else if (t.entity?.startsWith('I-')) {
+      buf += t.word.replace(/^##/, '')
+      bufScore = Math.max(bufScore, t.score)
+    }
+  }
+  if (buf) result.push({ entity: buf, type: bufType, score: bufScore })
+  return result
+}
+
+/** Causal-LM text generation (DistilGPT2) — free, offline. */
+export async function generateText(
+  prompt: string,
+  maxNew = 60,
+  onProgress?: (p: any) => void,
+): Promise<string> {
+  const pipe = await getPipeline('generate', onProgress)
+  const out = await pipe(prompt, { max_new_tokens: maxNew, do_sample: true, temperature: 0.9, top_k: 30 })
+  const txt = Array.isArray(out) ? out[0]?.generated_text : out?.generated_text
+  return typeof txt === 'string' ? txt : String(txt ?? '')
+}
+
+/** Fill-mask — complete a sentence with a [MASK] token. */
+export async function fillMask(
+  text: string,
+  onProgress?: (p: any) => void,
+): Promise<{ sequence: string; score: number }[]> {
+  const pipe = await getPipeline('fillMask', onProgress)
+  const out = await pipe(text)
+  const items = Array.isArray(out) ? out : []
+  return items.slice(0, 5).map((m: any) => ({ sequence: m.sequence, score: m.score }))
+}
+
+/** Image captioning (ViT-GPT2) from an uploaded image Blob/URL. */
+export async function captionImage(
+  source: Blob | string,
+  onProgress?: (p: any) => void,
+): Promise<string> {
+  const pipe = await getPipeline('imageCaption', onProgress)
+  const out = await pipe(source)
+  return Array.isArray(out) ? out[0]?.generated_text : out?.generated_text ?? ''
+}
+
+/** Zero-shot image classification (ViT) against free-text candidate labels. */
+export async function classifyImage(
+  source: Blob | string,
+  labels: string[],
+  onProgress?: (p: any) => void,
+): Promise<{ label: string; score: number }[]> {
+  const pipe = await getPipeline('imageClassify', onProgress)
+  const out = await pipe(source, labels)
+  if (!out?.labels) return []
+  return out.labels.map((l: string, i: number) => ({ label: l, score: out.scores?.[i] ?? 0 }))
 }
 
 /* ── Capability check ── */

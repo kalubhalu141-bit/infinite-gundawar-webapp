@@ -8,6 +8,9 @@ import AIGenerator from '@/components/AIGenerator'
 import ImageAI from '@/components/ImageAI'
 import VoiceChat from '@/components/VoiceChat'
 import SemanticSearch from '@/components/SemanticSearch'
+import DocQA from '@/components/DocQA'
+import SemanticCompare from '@/components/SemanticCompare'
+import FreeAIChat from '@/components/FreeAIChat'
 
 export default function FreeAILabPage() {
   return (
@@ -32,6 +35,9 @@ export default function FreeAILabPage() {
             <ImageAI />
             <VoiceChat />
             <SemanticSearch />
+            <DocQA />
+            <SemanticCompare />
+            <FreeAIChat />
           </div>
 
           <p style={{ color: 'var(--muted)', fontSize: 13, marginTop: 22 }}>

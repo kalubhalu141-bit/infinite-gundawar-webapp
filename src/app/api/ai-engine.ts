@@ -6,7 +6,7 @@
 const OPENROUTER_KEY = process.env.OPENROUTER_API_KEY || ''
 const SERPER_KEY = process.env.SERPER_API_KEY || ''
 const MODEL = 'google/gemini-2.0-flash-001'
-import { callFreeLLMChain, getEngineStatus, FREE_MODELS } from '../../../lib/freeModels'
+import { callFreeLLMChain, getEngineStatus, FREE_MODELS } from '../../lib/freeModels'
 
 // ─── Company Knowledge Base ───
 const COMPANY_KB = `

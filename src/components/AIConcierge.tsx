@@ -57,7 +57,7 @@ function buildAnswer(q: string): string {
   }
   const top = classifier.classify(q, 1)[0]
   const kb = KB.find(k => k.intent === top.label)
-  if (kb && top.score > 0.02) return kb.answer(q)
+  if (kb && top.score > 0.02) return kb.answer()
   return `🙏 I'm the Infinite AI concierge. ${COMPANY}\nAsk about infrastructure, real estate, trading, Ayurveda, finance, careers, marketing, interior or education — in English or हिंदी. I run on-device (private, no keys).`
 }
 

@@ -18,6 +18,18 @@
 const OLLAMA_BASE = process.env.OLLAMA_BASE || 'http://127.0.0.1:11434'
 const OPENROUTER_KEY = process.env.OPENROUTER_API_KEY || ''
 
+// Catalog of FREE model identifiers surfaced to the UI / re-exported by ai-engine.
+export const FREE_MODELS: string[] = [
+  'llama3.2:latest',
+  'gemma2:latest',
+  'qwen2.5:latest',
+  'mistral:latest',
+  'deepseek-r1:latest',
+  'llama3.1:latest',
+  'phi3:latest',
+  'google/gemini-2.0-flash-001:free',
+]
+
 // Default candidate ordering (small→big) used only until the live tag list
 // arrives; the live list overrides this so we always prefer installed models.
 const DEFAULT_ORDER = [

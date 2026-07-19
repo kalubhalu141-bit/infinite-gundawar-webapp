@@ -12,7 +12,7 @@ let _cache: any[] | null = null
 function getCalc(): any[] {
   if (_cache) return _cache
   _cache = JSON.parse(readFileSync(join(process.cwd(), 'data', 'finance-calculators.json'), 'utf8'))
-  return _cache
+  return _cache as any[]
 }
 
 export async function GET(req: NextRequest) {

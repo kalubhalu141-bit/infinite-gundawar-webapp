@@ -8,6 +8,8 @@ import { FloatingBots } from '@/components/FloatingBots'
 import AnimatedSection from '@/components/AnimatedSection'
 import DailyInsight from '@/components/DailyInsight'
 import { ScrollProgress } from '@/components/ui'
+import ThreeHero from '@/components/three/ThreeHero'
+import PillarsScene from '@/components/three/PillarsScene'
 
 
 /* ─── 3D Card Component ─── */
@@ -103,6 +105,37 @@ function Hero() {
             ))}
           </div>
         </AnimatedSection>
+      </div>
+    </section>
+  )
+}
+
+/* ─── 3D Experience (three.js, WebGL) ─── */
+function ThreeShowcase() {
+  return (
+    <section className="py-20 bg-gradient-to-br from-slate-950 via-indigo-950 to-slate-900 relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-10">
+          <div className="eyebrow" style={{ color: 'var(--accent)' }}>WebGL · three.js · zero-cost</div>
+          <h2 className="text-3xl md:text-5xl font-bold text-white mt-2">The 3D Infinite Gundawar</h2>
+          <p className="text-white/70 max-w-2xl mx-auto mt-3">
+            A live, interactive WebGL model of our four business pillars — rendered in your browser with three.js.
+            Drag to orbit, click a block to highlight it. Fully on-device, no plugins.
+          </p>
+          <a href="/three-experience" className="btn-ai mt-5">Open full 3D experience →</a>
+        </div>
+        <div className="glass rounded-3xl overflow-hidden relative" style={{ height: '460px' }}>
+          <PillarsScene
+            pillars={[
+              { id: 'infra', title: 'Infrastructure & Real Estate', color: 0xd4a843, blurb: '' },
+              { id: 'trade', title: 'Import / Export Trading', color: 0x2c82d4, blurb: '' },
+              { id: 'education', title: 'Coaching & Education', color: 0x818cf8, blurb: '' },
+              { id: 'digital', title: 'Digital Marketing', color: 0x34d399, blurb: '' },
+            ]}
+            selectedId={null}
+            onSelect={() => {}}
+          />
+        </div>
       </div>
     </section>
   )
@@ -883,6 +916,7 @@ export default function Home() {
       <Hero />
       <DailyInsight />
       <About />
+      <ThreeShowcase />
       <Journey />
       <Services />
       <AIDesignStudio />
